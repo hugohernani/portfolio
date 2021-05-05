@@ -1,0 +1,24 @@
+development:
+  clients:
+    default:
+      database: portfolio_development
+      hosts:
+        - localhost:27017
+      options:
+        # The timeout in seconds for selecting a server for an operation. (default: 30)
+        server_selection_timeout: 1
+        max_pool_size: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+  # Configure Mongoid specific options. (optional)
+  options:
+
+test:
+  clients:
+    default:
+      database: portfolio_test
+      hosts:
+        - localhost:27017
+      options:
+        read:
+          mode: :primary
+        max_pool_size: 1
