@@ -1,0 +1,8 @@
+inherit_from:
+  - '~/.rubocop.yml'
+
+AllCops:
+  TargetRubyVersion: 3.0
+
+Style/RedundantArgument:
+  Enabled: false
