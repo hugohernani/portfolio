@@ -41,3 +41,15 @@ pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
 
 # Allow puma to be restarted by `rails restart` command.
 plugin :tmp_restart
+
+
+on_worker_boot do
+  Mongoid::Clients.clients.each do |name, client|
+    client.close
+    client.reconnect
+  end
+end
+
+before_fork do
+  Mongoid.disconnect_clients
+end
