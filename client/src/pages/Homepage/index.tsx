@@ -49,7 +49,7 @@ const Homepage: React.FC = () => {
 
   return (
     <Container>
-      <PortfolioNavigationHeader />
+      <PortfolioNavigationHeader resumeUrl={userPresentationInfo.resumeUrl} />
       <BannerSection>
         <ProfileContainer>
           <PresentationContainer>

@@ -1,10 +1,12 @@
 import { BaseHeaderContainer, NavContainer } from './styles';
-import React, { useMemo, useState } from 'react';
+import React, { useMemo } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
-const PortfolioNavigationHeader: React.FC = ({ children }) => {
-  const [resumeUrl] = useState<string>('/hugo-hernani-cv.pdf');
+interface IPortfolioNavigationHeader {
+  resumeUrl: string;
+}
 
+const PortfolioNavigationHeader: React.FC<IPortfolioNavigationHeader> = ({ resumeUrl, children }) => {
   return useMemo(
     () => (
       <BaseHeaderContainer>
