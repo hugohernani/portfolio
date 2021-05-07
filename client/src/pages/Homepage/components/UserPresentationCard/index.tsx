@@ -6,19 +6,12 @@ import {
   PresentationTitle,
 } from './styles';
 import React, { useMemo } from 'react';
-import { ICallOutInfoButton, IUserInfo } from '../../interfaces';
 import { Link } from 'react-router-dom';
+import useProfileState from 'src/hooks/profiles';
 
-type IUserPresentationCard = IUserInfo & ICallOutInfoButton;
+const UserPresentationCard: React.FC = () => {
+  const { title, shortDescription, portfolioCallOut, portfolioUrl, resumeCallOut, resumeUrl } = useProfileState();
 
-const UserPresentationCard: React.FC<IUserPresentationCard> = ({
-  title,
-  shortDescription,
-  portfolioCallOut,
-  portfolioUrl,
-  resumeCallOut,
-  resumeUrl,
-}) => {
   return useMemo(
     () => (
       <BiographyContainer>

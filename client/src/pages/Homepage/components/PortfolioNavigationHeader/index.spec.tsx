@@ -1,10 +1,16 @@
 import React from 'react';
+import { ProfileContext } from 'src/contexts';
+import { IProfileContext } from 'src/interfaces';
 import { renderWithRouter } from 'src/test-utils';
 import PortfolioNavigationHeader from './index';
 
-const resumeUrl = '/hugo-hernani-cv.pdf';
+const resumeUrl = '/test';
 const renderPortfolioHeader = () => {
-  return renderWithRouter(<PortfolioNavigationHeader resumeUrl={resumeUrl} />);
+  return renderWithRouter(
+    <ProfileContext.Provider value={{ resumeUrl } as IProfileContext}>
+      <PortfolioNavigationHeader />
+    </ProfileContext.Provider>,
+  );
 };
 
 describe('PortfolioNavigationHeader', () => {
@@ -20,6 +26,7 @@ describe('PortfolioNavigationHeader', () => {
 
   test('renders Resume Link', () => {
     const { getAllByRole } = renderPortfolioHeader();
+
     const [, resumeUrlLink] = getAllByRole('link');
     expect(resumeUrlLink).toHaveAttribute('href', resumeUrl);
   });

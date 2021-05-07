@@ -1,12 +1,11 @@
 import { BaseHeaderContainer, NavContainer } from './styles';
 import React, { useMemo } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import useProfileState from 'src/hooks/profiles';
 
-interface IPortfolioNavigationHeader {
-  resumeUrl: string;
-}
+const PortfolioNavigationHeader: React.FC = ({ children }) => {
+  const { resumeUrl } = useProfileState();
 
-const PortfolioNavigationHeader: React.FC<IPortfolioNavigationHeader> = ({ resumeUrl, children }) => {
   return useMemo(
     () => (
       <BaseHeaderContainer>
