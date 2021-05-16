@@ -1,44 +1,17 @@
-import {
-  BannerSection,
-  Container,
-  PresentationContainer,
-  PresentationInfoContainer,
-  ProfileContainer,
-  ProfileImageContainer,
-  SocialLinksContainer,
-} from './styles';
-import React, { useCallback, useState } from 'react';
-import PortfolioNavigationHeader from './components/PortfolioNavigationHeader';
-import PortfolioNavigationBottom from './components/PortfolioNavigationBottom';
+import { BannerSection, Container, PresentationContainer, PresentationInfoContainer, ProfileContainer } from './styles';
+import React from 'react';
+import NavigationHeader from './components/NavigationHeader';
+import NavigationBottom from './components/NavigationBottom';
 import SocialLinks from './components/SocialLinks';
 import UserPresentationCard from './components/UserPresentationCard';
-import { ISocialLinkConfig, IUserProfileImage } from './interfaces';
-import UserPresentationProfileImage from './components/UserPresentationProfileImage';
+import UserPresentationProfile from './components/UserPresentationProfile';
 import { ProfileManagementProvider } from 'src/providers';
 
 const Homepage: React.FC = () => {
-  const [userProfileImage] = useState<IUserProfileImage>({
-    url: 'me-avatar.svg',
-    hoverUrl: 'me-avatar-wink.svg',
-    description: 'Hugo Hernani',
-    width: '560px',
-    height: '600px',
-  });
-
-  const [socialLinkConfig] = useState<ISocialLinkConfig>({
-    iconColor: '#000000',
-    textColor: '#ffffff',
-  });
-
-  const profileImageSizeCb = useCallback(() => {
-    const { width, height } = userProfileImage;
-    return { width, height };
-  }, [userProfileImage]);
-
   return (
     <Container>
       <ProfileManagementProvider>
-        <PortfolioNavigationHeader />
+        <NavigationHeader />
         <BannerSection>
           <ProfileContainer>
             <PresentationContainer>
@@ -46,17 +19,11 @@ const Homepage: React.FC = () => {
                 <UserPresentationCard />
               </PresentationInfoContainer>
             </PresentationContainer>
-
-            <ProfileImageContainer theme={{ imageSize: profileImageSizeCb() }}>
-              <UserPresentationProfileImage {...userProfileImage} />
-            </ProfileImageContainer>
+            <UserPresentationProfile />
           </ProfileContainer>
-          <SocialLinksContainer>
-            <SocialLinks {...socialLinkConfig} />
-          </SocialLinksContainer>
+          <SocialLinks />
         </BannerSection>
-
-        <PortfolioNavigationBottom />
+        <NavigationBottom />
       </ProfileManagementProvider>
     </Container>
   );

@@ -1,7 +1,7 @@
 import { NavContainer, Copyright, BaseBottomContainer } from './styles';
 import React, { useMemo } from 'react';
 
-const PortfolioNavigationBottom: React.FC = () => {
+const NavigationBottom: React.FC = () => {
   return useMemo(
     () => (
       <BaseBottomContainer>
@@ -14,4 +14,4 @@ const PortfolioNavigationBottom: React.FC = () => {
   );
 };
 
-export default PortfolioNavigationBottom;
+export default NavigationBottom;

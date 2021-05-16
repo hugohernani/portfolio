@@ -3,7 +3,7 @@ import React, { useMemo } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import useProfileState from 'src/hooks/profiles';
 
-const PortfolioNavigationHeader: React.FC = ({ children }) => {
+const NavigationHeader: React.FC = ({ children }) => {
   const { resumeUrl } = useProfileState();
 
   return useMemo(
@@ -22,4 +22,4 @@ const PortfolioNavigationHeader: React.FC = ({ children }) => {
   );
 };
 
-export default PortfolioNavigationHeader;
+export default NavigationHeader;

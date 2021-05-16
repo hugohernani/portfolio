@@ -2,18 +2,18 @@ import React from 'react';
 import { ProfileContext } from 'src/contexts';
 import { IProfileContext } from 'src/interfaces';
 import { renderWithRouter } from 'src/test-utils';
-import PortfolioNavigationHeader from './index';
+import NavigationHeader from './index';
 
 const resumeUrl = '/test';
 const renderPortfolioHeader = () => {
   return renderWithRouter(
     <ProfileContext.Provider value={{ resumeUrl } as IProfileContext}>
-      <PortfolioNavigationHeader />
+      <NavigationHeader />
     </ProfileContext.Provider>,
   );
 };
 
-describe('PortfolioNavigationHeader', () => {
+describe('NavigationHeader', () => {
   test('renders component', () => {
     renderPortfolioHeader();
   });

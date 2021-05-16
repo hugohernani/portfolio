@@ -30,3 +30,28 @@ export const Container = styled.nav`
     }
   }
 `;
+
+export const SocialLinksContainer = styled.div`
+  align-self: flex-start;
+  margin-top: 0px;
+  padding: 0px;
+
+  transition: margin-top 0.4s, padding 0.4s, background-color 0.2s linear;
+
+  &:hover {
+    background-color: white;
+    padding: 10px;
+
+    @media (min-width: 900px) {
+      margin-top: -18px;
+    }
+
+    a {
+      color: black;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    align-self: center;
+  }
+`;
