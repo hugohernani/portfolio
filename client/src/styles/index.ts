@@ -24,9 +24,8 @@ export default createGlobalStyle`
   }
 
   #root{
-    // max-width: 1060px;
     margin: 0 auto;
-    // padding: 40px 20px;
+    height: 100vh;
   }
 
   #root.open-modal{
@@ -45,5 +44,9 @@ export default createGlobalStyle`
 
   a.active{
     color: white;
+  }
+
+  .uppercase{
+    text-transform: uppercase;
   }
 `;

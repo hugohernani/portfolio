@@ -1,7 +1,14 @@
 import React from 'react';
+import PortfolioListing from './components/PortfolioListing';
+import TableOfContent from './components/TableOfContent';
 
 const Portfolio: React.FC = () => {
-  return <h1>Portfolio Page</h1>;
+  return (
+    <React.Fragment>
+      <PortfolioListing />
+      <TableOfContent />
+    </React.Fragment>
+  );
 };
 
 export default Portfolio;
