@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
-import { IProjectListing } from '../../interfaces';
+import { IProjectListing } from 'src/interfaces';
 
 const ProjectListing: React.FC<IProjectListing> = ({ projects }) => {
   return (

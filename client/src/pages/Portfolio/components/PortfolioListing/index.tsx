@@ -4,7 +4,7 @@ import ProjectListing from './ProjectListing';
 import { Container } from './styles';
 
 const PortfolioListing: React.FC = () => {
-  const projects = useProjects();
+  const { projects } = useProjects();
 
   return (
     <Container>

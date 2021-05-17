@@ -1,6 +1,6 @@
 import React from 'react';
 import { ListGroup } from 'react-bootstrap';
-import { IProjectListing } from '../../interfaces';
+import { IProjectListing } from 'src/interfaces';
 
 const ProjectListing: React.FC<IProjectListing> = ({ projects }) => {
   return (

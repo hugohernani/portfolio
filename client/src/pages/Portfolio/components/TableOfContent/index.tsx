@@ -5,7 +5,7 @@ import ProjectListing from './ProjectListing';
 import { Container } from './styles';
 
 const TableOfContent: React.FC = () => {
-  const projects = useProjects();
+  const { projects } = useProjects();
 
   return useMemo(
     () => (
