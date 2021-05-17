@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { IProject } from '../../components/interfaces';
+import { IProject } from 'src/interfaces';
 
 const useProjects = () => {
   const [projects] = useState<IProject[]>([
