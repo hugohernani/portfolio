@@ -7,7 +7,7 @@ export default class ProjectsAPI {
 
   constructor(apiToken: string) {
     this.api = ApiFactory.createAxiosInstance({
-      baseURL: process.env.REACT_APP_SERVER_BASE_URL as string,
+      baseURL: `${process.env?.REACT_APP_SERVER_BASE_URL || ''}/projects`,
       responseType: 'json',
       headers: {
         Accept: 'application/vnd.portfolio.v1+json',
@@ -18,12 +18,12 @@ export default class ProjectsAPI {
   }
 
   async getAll(): Promise<IProject[]> {
-    const response = await this.api.get<IProject[]>('/project');
+    const response = await this.api.get<IProject[]>('/');
     return response.data;
   }
 
   async get(projectId: string): Promise<IProject> {
-    const response = await this.api.get<IProject>(`/project${projectId}`);
+    const response = await this.api.get<IProject>(`/${projectId}`);
     return response.data;
   }
 }

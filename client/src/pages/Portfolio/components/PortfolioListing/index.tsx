@@ -4,13 +4,9 @@ import ProjectListing from './ProjectListing';
 import { Container } from './styles';
 
 const PortfolioListing: React.FC = () => {
-  const { projects } = useProjects();
+  const { projects, isSuccess } = useProjects();
 
-  return (
-    <Container>
-      <ProjectListing projects={projects} />;
-    </Container>
-  );
+  return <Container>{isSuccess && <ProjectListing projects={projects} />}</Container>;
 };
 
 export default PortfolioListing;

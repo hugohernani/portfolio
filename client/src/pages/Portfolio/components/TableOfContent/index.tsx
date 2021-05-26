@@ -5,7 +5,7 @@ import ProjectListing from './ProjectListing';
 import { Container } from './styles';
 
 const TableOfContent: React.FC = () => {
-  const { projects } = useProjects();
+  const { isSuccess, projects } = useProjects();
 
   return useMemo(
     () => (
@@ -14,11 +14,11 @@ const TableOfContent: React.FC = () => {
           <Card.Header>
             <Card.Title>Projects</Card.Title>
           </Card.Header>
-          <ProjectListing projects={projects} />
+          {isSuccess && <ProjectListing projects={projects} />}
         </Card>
       </Container>
     ),
-    [projects],
+    [isSuccess, projects],
   );
 };
 

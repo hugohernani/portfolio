@@ -34,6 +34,16 @@ export default createGlobalStyle`
     overflow-y: overlay;
   }
 
+  #root > .remove-width-margins{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #root > .no-horizontal-padding{
+    padding-left: auto;
+    padding-right: auto;
+  }
+
   button{
     cursor: pointer;
   }

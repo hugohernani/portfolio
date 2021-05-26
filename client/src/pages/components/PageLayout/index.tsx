@@ -7,7 +7,7 @@ const PageLayout: React.FC = ({ children }) => {
   return (
     <React.Fragment>
       <NavigationHeader />
-      <Row>{children}</Row>
+      <Row className="remove-width-margins">{children}</Row>
       <NavigationBottom />
     </React.Fragment>
   );

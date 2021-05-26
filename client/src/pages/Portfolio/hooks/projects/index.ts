@@ -5,6 +5,8 @@ import { ProjectsAPI } from 'src/services';
 
 interface IUseProjects {
   projects: IProject[];
+  isLoading: boolean;
+  isSuccess: boolean;
 }
 
 const useProjects = (): IUseProjects => {
@@ -13,33 +15,8 @@ const useProjects = (): IUseProjects => {
     return new ProjectsAPI(apiToken as string);
   });
 
-  const { data: projects } = useQuery<IProject[], any>('projects', () => projectApi.getAll());
-
-  // const [projects] = useState<IProject[]>([
-  //   {
-  //     id: '1',
-  //     title: 'Website 1',
-  //     technology: 'React',
-  //     shortDescription:
-  //       'Lorem impsum Lorem impsum Lorem impsum Lorem impsum Lorem impsum Lorem impsum Lorem impsum Lorem impsum Lorem impsum ',
-  //   },
-  //   {
-  //     id: '2',
-  //     title: 'Website 2',
-  //     technology: 'Ruby on Rails',
-  //     shortDescription:
-  //       'Lorem impsum Lorem impsum Lorem impsum Lorem impsum Lorem impsum Lorem impsum Lorem impsum Lorem impsum Lorem impsum ',
-  //   },
-  //   {
-  //     id: '3',
-  //     title: 'Website 3',
-  //     technology: 'Elixir',
-  //     shortDescription:
-  //       'Lorem impsum Lorem impsum Lorem impsum Lorem impsum Lorem impsum Lorem impsum Lorem impsum Lorem impsum Lorem impsum ',
-  //   },
-  // ]);
-
-  return { projects: projects as IProject[] };
+  const { data: projects, isLoading, isSuccess } = useQuery<IProject[], any>('projects', () => projectApi.getAll());
+  return { projects: projects as IProject[], isLoading, isSuccess };
 };
 
 export default useProjects;
