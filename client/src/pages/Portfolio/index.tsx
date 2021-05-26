@@ -5,11 +5,11 @@ import TableOfContent from './components/TableOfContent';
 
 const Portfolio: React.FC = () => {
   return (
-    <Row>
-      <Col md={9} className="no-horizontal-padding">
+    <Row className="mx-0 bg-light mx-5 my-3 py-3">
+      <Col className="px-5" md={9}>
         <PortfolioListing />
       </Col>
-      <Col md={3} className="no-horizontal-padding">
+      <Col className="px-0" md={3}>
         <TableOfContent />
       </Col>
     </Row>

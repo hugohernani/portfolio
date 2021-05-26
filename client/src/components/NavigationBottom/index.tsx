@@ -3,9 +3,9 @@ import { Nav, Navbar } from 'react-bootstrap';
 
 const NavigationBottom: React.FC = () => {
   return (
-    <Navbar className="d-block" fixed="bottom" expand="lg" variant="light" bg="light">
-      <Nav className="justify-content-center">
-        <Nav.Item className="uppercase">2021 - Hugo Hernani</Nav.Item>
+    <Navbar className="justify-content-center" expand="lg" variant="light" bg="light" static="bottom">
+      <Nav>
+        <Nav.Item className="uppercase btn btn-light">2021 - Hugo Hernani</Nav.Item>
       </Nav>
     </Navbar>
   );

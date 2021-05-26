@@ -9,7 +9,7 @@ export default createGlobalStyle`
   }
 
   body{
-    background-color: rgb(72, 172, 194);
+    background-color: var(--info);
     font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
@@ -32,16 +32,6 @@ export default createGlobalStyle`
     position: fixed;
     height: 100vh;
     overflow-y: overlay;
-  }
-
-  #root > .remove-width-margins{
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  #root > .no-horizontal-padding{
-    padding-left: auto;
-    padding-right: auto;
   }
 
   button{

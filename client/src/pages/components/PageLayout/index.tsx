@@ -1,5 +1,4 @@
 import React from 'react';
-import { Row } from 'react-bootstrap';
 import NavigationBottom from 'src/components/NavigationBottom';
 import NavigationHeader from 'src/components/NavigationHeader';
 
@@ -7,7 +6,7 @@ const PageLayout: React.FC = ({ children }) => {
   return (
     <React.Fragment>
       <NavigationHeader />
-      <Row className="remove-width-margins">{children}</Row>
+      {children}
       <NavigationBottom />
     </React.Fragment>
   );

@@ -11,9 +11,7 @@ const TableOfContent: React.FC = () => {
     () => (
       <Container>
         <Card>
-          <Card.Header>
-            <Card.Title>Projects</Card.Title>
-          </Card.Header>
+          <Card.Header className="text-center">Projects</Card.Header>
           {isSuccess && <ProjectListing projects={projects} />}
         </Card>
       </Container>

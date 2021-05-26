@@ -8,13 +8,7 @@ import ApiMockWorker from './apiMocks/workers';
 // import reportWebVitals from './reportWebVitals';
 
 if (process.env.NODE_ENV == 'development') {
-  ApiMockWorker.start({
-    // serviceWorker: {
-    //   options: {
-    //     scope: '/projects',
-    //   },
-    // },
-  });
+  ApiMockWorker.start();
 }
 
 ReactDOM.render(
