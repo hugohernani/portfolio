@@ -1,17 +1,21 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
 import Routes from './routes';
 import GlobalStyle from './styles';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      notifyOnChangeProps: 'tracked',
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter basename={'/'}>
-        <Routes />
-      </BrowserRouter>
+      <Routes />
       <GlobalStyle />
     </QueryClientProvider>
   );

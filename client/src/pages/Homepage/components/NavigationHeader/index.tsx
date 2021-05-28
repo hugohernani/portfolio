@@ -1,6 +1,6 @@
 import { BaseHeaderContainer, NavContainer } from './styles';
 import React, { useMemo } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { A } from 'hookrouter';
 import useProfileState from 'src/hooks/profiles';
 
 const NavigationHeader: React.FC = ({ children }) => {
@@ -10,11 +10,11 @@ const NavigationHeader: React.FC = ({ children }) => {
     () => (
       <BaseHeaderContainer>
         <NavContainer>
-          <NavLink to="/">Hugo Hernani</NavLink>
+          <A href="/">Hugo Hernani</A>
           {children}
-          <Link to={resumeUrl} download target="_blank">
+          <a href={resumeUrl} download target="_blank" rel="noreferrer">
             My Resume
-          </Link>
+          </a>
         </NavContainer>
       </BaseHeaderContainer>
     ),

@@ -14,5 +14,8 @@
   },
   "keywords": [],
   "author": "Hugo Hernani",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "jotai": "^0.16.7"
+  }
 }

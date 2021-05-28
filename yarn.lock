@@ -2,3 +2,7 @@
 # yarn lockfile v1
 
 
+jotai@^0.16.7:
+  version "0.16.7"
+  resolved "https://registry.yarnpkg.com/jotai/-/jotai-0.16.7.tgz#31bc67b5d1b5dde2bac63e0604818c06059750af"
+  integrity sha512-eD8rQffsuQanLnXWxn/7lWXsDlBw4Mw4qmb/craISnjxD1a7jZy5BLSvYFkP+CGLEflZTwd9s2UN+U1qcQPUqA==

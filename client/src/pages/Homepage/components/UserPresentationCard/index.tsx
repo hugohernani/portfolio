@@ -6,7 +6,6 @@ import {
   PresentationTitle,
 } from './styles';
 import React, { useMemo } from 'react';
-import { Link } from 'react-router-dom';
 import useProfileState from 'src/hooks/profiles';
 
 const UserPresentationCard: React.FC = () => {
@@ -19,12 +18,12 @@ const UserPresentationCard: React.FC = () => {
         <PresentationShortDescription>{shortDescription}</PresentationShortDescription>
 
         <CallOutContainer>
-          <Link to={resumeUrl}>
+          <a href={resumeUrl}>
             <CallOutButton>{resumeCallOut}</CallOutButton>
-          </Link>
-          <Link to={portfolioUrl}>
+          </a>
+          <a href={portfolioUrl}>
             <CallOutButton>{portfolioCallOut}</CallOutButton>
-          </Link>
+          </a>
         </CallOutContainer>
       </BiographyContainer>
     ),

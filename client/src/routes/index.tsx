@@ -1,15 +1,34 @@
+/* eslint-disable react/display-name */
+
+import { useRoutes } from 'hookrouter';
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
 import { Homepage, Portfolio } from 'src/pages';
 import PageLayout from 'src/pages/components/PageLayout';
 
-const Routes: React.FC = () => (
-  <Switch>
-    <Route path="/" exact component={Homepage} />
-    <PageLayout>
-      <Route path="/portfolio" exact component={Portfolio} />
-    </PageLayout>
-  </Switch>
-);
+const pageRoutes = {
+  '/portfolio*': () => <Portfolio />,
+  '/projects*': () => <Portfolio />,
+};
 
-export default Routes;
+const BrowserRoutes: React.FC = () => {
+  const rootRoute = useRoutes({ '/': () => <Homepage /> });
+  const pageRoutesResults = useRoutes(pageRoutes);
+
+  return (
+    <React.Fragment>
+      {rootRoute}
+      <PageLayout>{pageRoutesResults}</PageLayout>
+    </React.Fragment>
+  );
+
+  // <Switch>
+  //   <Route exact path="/" component={Homepage} />
+  //   <PageLayout>
+  //     <Route path={['/portfolio', '/projects']}>
+  //       <Portfolio />
+  //     </Route>
+  //   </PageLayout>
+  // </Switch>
+};
+
+export default BrowserRoutes;

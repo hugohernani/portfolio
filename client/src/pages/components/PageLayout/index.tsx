@@ -1,14 +1,15 @@
+import { Provider } from 'jotai';
 import React from 'react';
 import NavigationBottom from 'src/components/NavigationBottom';
 import NavigationHeader from 'src/components/NavigationHeader';
 
 const PageLayout: React.FC = ({ children }) => {
   return (
-    <React.Fragment>
+    <Provider>
       <NavigationHeader />
       {children}
       <NavigationBottom />
-    </React.Fragment>
+    </Provider>
   );
 };
 
