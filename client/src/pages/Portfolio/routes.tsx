@@ -1,14 +1,14 @@
 /* eslint-disable react/display-name, @typescript-eslint/explicit-module-boundary-types, react/react-in-jsx-scope */
 
-import PortfolioListing from './components/PortfolioListing';
-
-const Listing = <PortfolioListing />;
+import React from 'react';
+const PortfolioListing = React.lazy(() => import('./components/PortfolioListing'));
+const ProjectView = React.lazy(() => import('./components/ProjectView'));
 
 const routes = {
-  '/projects': () => Listing,
-  '/projects/:projectId': (projectId: any) => <h1>{projectId}</h1>,
-  '/': () => Listing,
-  '/:projectId': ({ projectId }: any) => <h1>test {projectId}</h1>,
+  '/projects': () => <PortfolioListing />,
+  '/projects/:projectId': (projectId: any) => <ProjectView projectId={projectId} />,
+  '/': () => <PortfolioListing />,
+  '/:projectId': ({ projectId }: any) => <ProjectView projectId={projectId} />,
 };
 
 export default routes;

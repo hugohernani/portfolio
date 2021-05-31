@@ -1,13 +1,24 @@
 import React from 'react';
+import { Col, Row } from 'react-bootstrap';
 import { IProject } from 'src/interfaces';
 import { useProjects } from '../../hooks/projects';
+import TableOfContent from '../TableOfContent';
 import ProjectListing from './ProjectListing';
 import { Container } from './styles';
 
 const PortfolioListing: React.FC = () => {
   const { data: projects, isSuccess } = useProjects();
 
-  return <Container>{isSuccess && <ProjectListing projects={projects as IProject[]} />}</Container>;
+  return (
+    <Row className="py-3">
+      <Col className="px-5" md={9}>
+        {isSuccess && <ProjectListing projects={projects as IProject[]} />}
+      </Col>
+      <Col className="px-0 pr-5" md={3}>
+        <TableOfContent />
+      </Col>
+    </Row>
+  );
 };
 
 export default PortfolioListing;

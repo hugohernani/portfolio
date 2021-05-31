@@ -1,22 +1,19 @@
 import { useRoutes } from 'hookrouter';
 import PortfolioRoutes from './routes';
-import React from 'react';
-import { Col, Row } from 'react-bootstrap';
-import TableOfContent from './components/TableOfContent';
+import React, { Suspense } from 'react';
+import { Col } from 'react-bootstrap';
+import { Container } from './styles';
 
 const Portfolio: React.FC = () => {
   // const { path } = useRouteMatch();
   const routesResults = useRoutes(PortfolioRoutes);
 
   return (
-    <Row className="mx-0 bg-light mx-5 my-3 py-3">
-      <Col className="px-5" md={9}>
-        {routesResults}
+    <Container className="row bg-light">
+      <Col md={12}>
+        <Suspense fallback={<div>Loading...</div>}>{routesResults}</Suspense>
       </Col>
-      <Col className="px-0" md={3}>
-        <TableOfContent />
-      </Col>
-    </Row>
+    </Container>
   );
 };
 
