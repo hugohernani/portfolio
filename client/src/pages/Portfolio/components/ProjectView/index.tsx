@@ -1,7 +1,8 @@
 import React from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
 import { useProject } from '../../hooks/projects';
-import TableOfContent from '../TableOfContent';
+import ProjectsSidebar from '../ProjectsSidebar';
+import ProjectTableOfContent from '../ProjectsSidebar/ProjectTableOfContent';
 import ProjectImage from './ProjectImage';
 import { Container, Article } from './styles';
 
@@ -31,7 +32,9 @@ const ProjectView: React.FC<IProjectView> = ({ projectId }) => {
             </Article>
           </Col>
           <Col className="px-0 py-4 pr-5 pl-3" md={3}>
-            <TableOfContent />
+            <ProjectsSidebar listingTitle="Projects" listingUrl={`/projects/${projectId}`}>
+              <ProjectTableOfContent />
+            </ProjectsSidebar>
           </Col>
         </Row>
       )}

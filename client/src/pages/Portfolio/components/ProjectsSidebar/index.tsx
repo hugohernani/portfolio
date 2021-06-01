@@ -1,0 +1,26 @@
+import { A } from 'hookrouter';
+import React from 'react';
+import { Card, NavLink } from 'react-bootstrap';
+import { Container } from './styles';
+
+interface IProjectsSidebar {
+  listingTitle: string;
+  listingUrl: string;
+}
+
+const ProjectsSidebar: React.FC<IProjectsSidebar> = ({ listingTitle, listingUrl, children }) => {
+  return (
+    <Container>
+      <Card>
+        <Card.Header className="text-center">
+          <NavLink as={A} className="btn btn-secondary btn-block" href={listingUrl}>
+            {listingTitle}
+          </NavLink>
+        </Card.Header>
+        {children}
+      </Card>
+    </Container>
+  );
+};
+
+export default ProjectsSidebar;

@@ -1,5 +1,5 @@
 import { atom } from 'jotai';
 
-const selectedProjectIdAtom = atom<string>('-1');
+const selectedProjectResource = atom<string>('-1');
 
-export { selectedProjectIdAtom };
+export { selectedProjectResource };

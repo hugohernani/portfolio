@@ -2,9 +2,9 @@ import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { IProject } from 'src/interfaces';
 import { useProjects } from '../../hooks/projects';
-import TableOfContent from '../TableOfContent';
+import ProjectsSidebar from '../ProjectsSidebar';
+import ProjectSidebarListing from '../ProjectsSidebar/ProjectSidebarListing';
 import ProjectListing from './ProjectListing';
-import { Container } from './styles';
 
 const PortfolioListing: React.FC = () => {
   const { data: projects, isSuccess } = useProjects();
@@ -15,7 +15,9 @@ const PortfolioListing: React.FC = () => {
         {isSuccess && <ProjectListing projects={projects as IProject[]} />}
       </Col>
       <Col className="px-0 pr-5" md={3}>
-        <TableOfContent />
+        <ProjectsSidebar listingTitle="Projects" listingUrl="/projects">
+          <ProjectSidebarListing />
+        </ProjectsSidebar>
       </Col>
     </Row>
   );

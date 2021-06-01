@@ -5,7 +5,6 @@ import { Col } from 'react-bootstrap';
 import { Container } from './styles';
 
 const Portfolio: React.FC = () => {
-  // const { path } = useRouteMatch();
   const routesResults = useRoutes(PortfolioRoutes);
 
   return (
