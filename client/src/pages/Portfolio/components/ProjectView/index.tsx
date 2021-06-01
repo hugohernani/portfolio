@@ -21,16 +21,16 @@ const ProjectView: React.FC<IProjectView> = ({ projectId }) => {
           <Col className="px-0" md={12}>
             <ProjectImage project={project} />
           </Col>
-          <Col className="py-4" md={9}>
+          <Col className="py-4 pl-5 pr-3" md={9}>
             <Article>
-              <Card>
+              <Card className="py-5 px-4">
                 <Card.Body>
                   <Card.Text>{project.content}</Card.Text>
                 </Card.Body>
               </Card>
             </Article>
           </Col>
-          <Col className="px-0 py-4 pr-3" md={3}>
+          <Col className="px-0 py-4 pr-5 pl-3" md={3}>
             <TableOfContent />
           </Col>
         </Row>
