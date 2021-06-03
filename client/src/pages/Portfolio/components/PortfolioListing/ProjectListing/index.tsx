@@ -7,7 +7,7 @@ const ProjectListing: React.FC<IProjectListing> = ({ projects }) => {
     () => (
       <React.Fragment>
         {projects.map((project) => (
-          <Card className="px-5 py-4" key={project.id}>
+          <Card className="px-5 py-4 border-0" key={project.id}>
             <Card.Body>
               <Card.Title>{project.title}</Card.Title>
               <Card.Subtitle>{project.technology}</Card.Subtitle>

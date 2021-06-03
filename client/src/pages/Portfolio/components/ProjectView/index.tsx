@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
+import MarkdownContent from 'src/components/MarkdownContent';
 import { useProject } from '../../hooks/projects';
 import ProjectsSidebar from '../ProjectsSidebar';
 import ProjectTableOfContent from '../ProjectsSidebar/ProjectTableOfContent';
@@ -26,13 +27,13 @@ const ProjectView: React.FC<IProjectView> = ({ projectId }) => {
             <Article>
               <Card className="py-5 px-4">
                 <Card.Body>
-                  <Card.Text>{project.content}</Card.Text>
+                  <MarkdownContent content={project.content} />
                 </Card.Body>
               </Card>
             </Article>
           </Col>
           <Col className="px-0 py-4 pr-5 pl-3" md={3}>
-            <ProjectsSidebar listingTitle="Projects" listingUrl={`/projects/${projectId}`}>
+            <ProjectsSidebar listingTitle="Sections" listingUrl={`/projects/${projectId}`}>
               <ProjectTableOfContent />
             </ProjectsSidebar>
           </Col>

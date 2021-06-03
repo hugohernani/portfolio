@@ -12,8 +12,8 @@ const ProjectsSidebar: React.FC<IProjectsSidebar> = ({ listingTitle, listingUrl,
   return (
     <Container>
       <Card>
-        <Card.Header className="text-center">
-          <NavLink as={A} className="btn btn-secondary btn-block" href={listingUrl}>
+        <Card.Header className="text-center bg-white">
+          <NavLink as={A} className="btn btn-light btn-block" href={listingUrl}>
             {listingTitle}
           </NavLink>
         </Card.Header>
