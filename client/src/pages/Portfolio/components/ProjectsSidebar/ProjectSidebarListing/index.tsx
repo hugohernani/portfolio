@@ -1,4 +1,4 @@
-import { A } from 'hookrouter';
+import { A, usePath } from 'hookrouter';
 import { useAtom } from 'jotai';
 import React, { useMemo } from 'react';
 import { ListGroup } from 'react-bootstrap';
@@ -7,6 +7,7 @@ import { useProjects } from 'src/pages/Portfolio/hooks/projects';
 
 const ProjectSidebarListing: React.FC = () => {
   const { isSuccess, data: projects } = useProjects();
+  const currentPath = usePath();
   const [activeProjectResourceId, setActiveProjectResourceId] = useAtom(selectedProjectResource);
 
   return useMemo(
@@ -17,7 +18,7 @@ const ProjectSidebarListing: React.FC = () => {
             <ListGroup.Item
               action
               as={A}
-              href={`/projects/${project.id}`}
+              href={`${currentPath}/${project.id}`}
               eventKey={project.id}
               key={project.id}
               onClick={() => setActiveProjectResourceId(project.id)}
@@ -27,7 +28,7 @@ const ProjectSidebarListing: React.FC = () => {
           ))}
       </ListGroup>
     ),
-    [isSuccess, projects, setActiveProjectResourceId, activeProjectResourceId],
+    [isSuccess, projects, currentPath, setActiveProjectResourceId, activeProjectResourceId],
   );
 };
 

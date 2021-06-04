@@ -1,3 +1,4 @@
+import { usePath } from 'hookrouter';
 import React from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
 import MarkdownContent from 'src/components/MarkdownContent';
@@ -5,13 +6,14 @@ import { useProject } from '../../hooks/projects';
 import ProjectsSidebar from '../ProjectsSidebar';
 import ProjectTableOfContent from '../ProjectsSidebar/ProjectTableOfContent';
 import ProjectImage from './ProjectImage';
-import { Container, Article } from './styles';
+import { Article, Container } from './styles';
 
 interface IProjectView {
   projectId: string;
 }
 
 const ProjectView: React.FC<IProjectView> = ({ projectId }) => {
+  const currentPath = usePath();
   const { data: project, isSuccess } = useProject({
     projectId: projectId,
   });
@@ -33,7 +35,7 @@ const ProjectView: React.FC<IProjectView> = ({ projectId }) => {
             </Article>
           </Col>
           <Col className="px-0 py-4 pr-5 pl-3" md={3}>
-            <ProjectsSidebar listingTitle="Sections" listingUrl={`/projects/${projectId}`}>
+            <ProjectsSidebar listingTitle="Sections" listingUrl={currentPath}>
               <ProjectTableOfContent />
             </ProjectsSidebar>
           </Col>

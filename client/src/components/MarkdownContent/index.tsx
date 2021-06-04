@@ -1,6 +1,9 @@
+/* eslint-disable react/display-name */
+
 import React, { useMemo } from 'react';
 import ReactMarkdown from 'react-markdown';
 import gfm from 'remark-gfm';
+import { IMarkdownContent } from 'src/interfaces';
 import MarkdownBlockCode from './components/MarkdownBlockCode';
 import MarkdownBlockquote from './components/MarkdownBlockquote';
 import MarkdownImage from './components/MarkdownImage';
@@ -8,15 +11,13 @@ import MarkdownImageReference from './components/MarkdownImageReference';
 import MarkdownInlineCode from './components/MarkdownInlineCode';
 import MarkdownList from './components/MarkdownList';
 import MarkdownListItem from './components/MarkdownListItem';
+import MarkdownMainHeading from './components/MarkdownMainHeading';
 import MarkdownParagraph from './components/MarkdownParagraph';
-
-interface IMarkdownContent {
-  readonly content: string;
-}
 
 const MarkdownContent: React.FC<IMarkdownContent> = ({ content }) => {
   const renderers = useMemo(
     () => ({
+      heading: MarkdownMainHeading,
       list: MarkdownList,
       listItem: MarkdownListItem,
       image: MarkdownImage,
@@ -33,7 +34,7 @@ const MarkdownContent: React.FC<IMarkdownContent> = ({ content }) => {
 
   return useMemo(
     () => (
-      <ReactMarkdown className="card-text" renderers={renderers} plugins={plugins}>
+      <ReactMarkdown className="card-text markdown-body" renderers={renderers} plugins={plugins}>
         {content}
       </ReactMarkdown>
     ),

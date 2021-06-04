@@ -2,33 +2,19 @@
 
 import { useRoutes } from 'hookrouter';
 import React from 'react';
-import { Homepage, Portfolio } from 'src/pages';
-import PageLayout from 'src/pages/components/PageLayout';
+import { Homepage } from 'src/pages';
+import ProjectsRouting from './ProjectsRouting';
 
-const pageRoutes = {
-  '/portfolio*': () => <Portfolio />,
-  '/projects*': () => <Portfolio />,
+const routes = {
+  '/': () => <Homepage />,
+  '/portfolio*': ProjectsRouting,
+  '/projects*': ProjectsRouting,
 };
 
 const BrowserRoutes: React.FC = () => {
-  const rootRoute = useRoutes({ '/': () => <Homepage /> });
-  const pageRoutesResults = useRoutes(pageRoutes);
+  const routesResult = useRoutes(routes);
 
-  return (
-    <React.Fragment>
-      {rootRoute}
-      <PageLayout>{pageRoutesResults}</PageLayout>
-    </React.Fragment>
-  );
-
-  // <Switch>
-  //   <Route exact path="/" component={Homepage} />
-  //   <PageLayout>
-  //     <Route path={['/portfolio', '/projects']}>
-  //       <Portfolio />
-  //     </Route>
-  //   </PageLayout>
-  // </Switch>
+  return <React.Fragment>{routesResult}</React.Fragment>;
 };
 
 export default BrowserRoutes;
