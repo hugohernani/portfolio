@@ -1,8 +1,13 @@
 {
   "name": "portfolio_react_client",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "proxy": "http://localhost:3001",
+  "engines": {
+    "node": "16.x",
+    "npm": "8.19.x",
+    "yarn": "1.22.19"
+  },
   "dependencies": {
     "@types/hookrouter": "^2.2.5",
     "@types/react-syntax-highlighter": "^13.5.0",
