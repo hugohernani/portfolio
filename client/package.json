@@ -9,6 +9,7 @@
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "hookrouter": "^1.2.5",
+    "jotai": "^2.0.2",
     "msw": "^0.28.2",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.0",

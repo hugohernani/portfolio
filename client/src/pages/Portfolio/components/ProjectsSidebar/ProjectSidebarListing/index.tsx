@@ -12,6 +12,7 @@ const ProjectSidebarListing: React.FC = () => {
 
   return useMemo(
     () => (
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
       <ListGroup variant="flush" defaultActiveKey={`/projects/${activeProjectResourceId}`}>
         {isSuccess &&
           projects?.map((project) => (

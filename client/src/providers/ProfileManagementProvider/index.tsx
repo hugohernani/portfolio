@@ -4,19 +4,21 @@ import { IProfile, IProfileContext } from 'src/interfaces';
 
 const ProfileManagementProvider: React.FC = (props) => {
   const profileData: IProfile = {
-    title: 'Web Developer',
+    title: 'Programmer',
     shortDescription: `
-      Hi, I am coder. I build software things. And I love that I am able to do so.
-      Besides having a degree in computer science, I am a fullstack web developer. Wanna see a short description of my career and some of the things I have done in technology? Then my resume will show you this.
-      But do you wanna see in action what kind of things I have built and the current projects and technologies I have being working on? Then check out my portfolio.
+      Hi, I am a software engineer and I love how that makes me able to build projects from scratch and leverage incredible ideas.
+      I have a bachelor's degree in computer science and have created my professional career by working in many Industry sectors.
+      I am always aiming for performant, clean, and functional code with intelligent and fast delivery.
+      If you want to see a short description of my career then download my most recent resume.
+      You can also download a cover letter from one of my employers.
       `,
     resumeUrl: '/hugo-hernani-cv.pdf',
   };
   const providerValue: IProfileContext = {
     ...profileData,
-    portfolioCallOut: 'Portfolio',
+    portfolioCallOut: 'Cover Letter',
     resumeCallOut: 'Resume',
-    portfolioUrl: '/portfolio',
+    portfolioUrl: '/hugo-hernani-cover-letter.pdf',
   };
 
   return (
