@@ -11,7 +11,7 @@ type IUseProject = IBaseUseProject & UseQueryOptions<IProject>;
 const useProject = ({ projectId, ...queryProperties }: IUseProject): UseQueryResult<IProject> => {
   const projectApi = useProjectApi();
 
-  return useQuery(['project', projectId], () => projectApi.get(projectId), queryProperties);
+  return useQuery(['project', projectId], () => projectApi.get(projectId), <any>queryProperties);
 };
 
 export default useProject;

@@ -17,7 +17,6 @@ const ProjectsSidebar: React.FC<IProjectsSidebar> = ({ listingTitle, listingUrl,
             {listingTitle}
           </NavLink>
         </Card.Header>
-        {children}
       </Card>
     </Container>
   );
