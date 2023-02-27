@@ -6,7 +6,7 @@ const NavigationBottom: React.FC = () => {
     () => (
       <BaseBottomContainer>
         <NavContainer>
-          <Copyright>2021 - Hugo Hernani</Copyright>
+          <Copyright>2023 - Hugo Hernani</Copyright>
         </NavContainer>
       </BaseBottomContainer>
     ),
